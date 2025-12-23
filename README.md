@@ -28,17 +28,17 @@ FluentOS is **not** a custom Windows build, fork, or security bypass. It is a cu
 
 This v0.1 POC establishes the foundation and vision for what FluentOS will become in v1.0 and beyond.
 
-## 🎯 Quick Start
+## 🎯 Quick start
 
 | Resource | Link |
 |----------|------|
-| **Vision & Goals** | [📖 docs/vision.md](docs/vision.md) |
-| **Installation** | [⚙️ poc/installation.md](poc/installation.md) |
-| **Requirements** | [📋 poc/requirements.md](poc/requirements.md) |
-| **Roadmap** | [🗺️ docs/roadmap.md](docs/roadmap.md) |
-| **Legal** | [⚖️ docs/legal.md](docs/legal.md) |
+| **Vision & Goals** | [📖 docs/vision](docs/vision.md) |
+| **Installation** | [⚙️ poc/installation](poc/installation.md) |
+| **Requirements** | [📋 poc/requirements](poc/requirements.md) |
+| **Roadmap** | [🗺️ docs/roadmap](docs/roadmap.md) |
+| **Legal** | [⚖️ docs/legal](docs/legal.md) |
 
-## 📦 Repository Structure
+## 📦 Repository structure
 
 ```
 fluentos/
@@ -83,7 +83,7 @@ FluentOS comes in **three editions**, each tailored to different scales:
 
 → [Learn more about editions](docs/editions.md)
 
-## ⚠️ POC Status
+## ⚠️ Project status
 
 This **v0.1 POC is not production-ready**. It serves to:
 
@@ -91,18 +91,11 @@ This **v0.1 POC is not production-ready**. It serves to:
 2. **Establish** the organizational structure  
 3. **Outline** the approach for v0.2+ iterations
 
-Current limitations and known issues are documented in [poc/known-limitations.md](poc/known-limitations.md).
+Current limitations and known issues are documented in [poc/known-limitations](poc/known-limitations.md).
 
 ## 🗺️ Roadmap
 
-| Version | Timeline | Status | Focus |
-|---------|----------|--------|-------|
-| **v0.1** | Dec 2025 | ✅ Current | POC foundation |
-| **v0.2** | Q1 2026 | 📋 Planned | Consistency layer |
-| **v0.3** | Q2 2026 | 📋 Planned | Business ready |
-| **v0.4** | Q3 2026 | 📋 Planned | Business branding |
-| **v0.5** | Q4 2026 | 📋 Planned | Fleet preview |
-| **v1.0** | Q1 2027 | 🎯 Target | Production release |
+<img src="docs/assets/roadmap_info.png" alt="Roadmap" width="900" height="auto">
 
 → [Full roadmap with details](docs/roadmap.md)
 
@@ -138,6 +131,6 @@ FluentOS respects Microsoft licensing and operates through supported APIs only.
 **[Docs](docs/) • [Issues](https://github.com/codixia/fluentos/issues) • [License](LICENSE)**
 
 *Last updated: December 2025*  
-*Maintained by [Codixia](https://github.com/codixia)*
+*Maintained / Owned by [Codixia](https://github.com/codixia)*
 
 </div>
