@@ -1,6 +1,6 @@
 <div align="center">
 
-![FluentOS Logo](docs/assets/FluentOS.png)
+<img src="docs/assets/FluentOS.png" alt="FluentOS Logo" width="300" height="auto">
 
 # FluentOS
 
