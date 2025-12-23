@@ -1,48 +1,143 @@
-# FluentOS v0.1 – POC
+<div align="center">
 
-A modern UX layer for Windows 11, focusing on coherence, readability, and productivity.
+![FluentOS Logo](docs/assets/FluentOS.png)
 
-## Overview
+# FluentOS
 
-FluentOS is **not** a custom Windows build, fork, or security bypass. It is a curated set of:
-- UX presets and configurations
-- PowerShell installation and configuration scripts
-- Third-party tool integrations (Seelen, Windhawk, DWMBlurGlass, Explorer customizations)
-- Policy and personalization guidelines
+**A modern UX layer for Windows 11**  
+*Coherence • Readability • Productivity*
 
-This v0.1 POC establishes the skeletal structure and vision for what FluentOS will become.
-
-## Quick Links
-
-- **Vision & Goals**: see [docs/vision.md](docs/vision.md)
-- **Installation**: see [poc/installation.md](poc/installation.md)
-- **Requirements**: see [poc/requirements.md](poc/requirements.md)
-- **Roadmap**: see [docs/roadmap.md](docs/roadmap.md)
-
-## Repository Structure
-
-```
-fluentos/
-├─ docs/          # Documentation: vision, scope, roadmap, legal
-├─ poc/           # POC-specific docs: requirements, setup, limitations
-├─ scripts/       # Installation and configuration scripts
-│  ├─ install/    # Winget, tweaks, services setup
-│  ├─ uninstall/  # Rollback scripts
-│  └─ profiles/   # JSON presets (light/dark themes)
-├─ tools/         # Third-party tool integration guides
-└─ LICENSE        # MIT License
-```
-
-## For v0.1
-
-This POC is **not production-ready**. It serves to:
-1. Define the vision and scope
-2. Establish the organizational structure
-3. Outline the approach for v0.2+ iterations
-
-See [docs/roadmap.md](docs/roadmap.md) for planned versions and milestones.
+[![Status](https://img.shields.io/badge/Status-POC-orange?style=flat-square)](docs/roadmap.md)
+[![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat-square)](docs/roadmap.md)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Windows](https://img.shields.io/badge/Windows-11%2B-0078D4?style=flat-square&logo=windows11)](https://www.microsoft.com/en-us/windows/windows-11)
+[![GitHub Issues](https://img.shields.io/github/issues/codixia/fluentos?style=flat-square)](https://github.com/codixia/fluentos/issues)
 
 ---
 
-**Last updated**: December 2025  
-**Status**: POC – v0.1
+</div>
+
+## About FluentOS
+
+FluentOS is **not** a custom Windows build, fork, or security bypass. It is a curated set of:
+
+- ✨ **UX Presets & Configurations** — Cohesive visual design and behavior
+- 🚀 **PowerShell Automation** — Reproducible, scriptable installations
+- 🛠️ **Third-Party Integrations** — Seelen, Windhawk, DWMBlurGlass, Explorer customizations
+- 📋 **Policy Guidelines** — Best practices for organizational deployments
+
+This v0.1 POC establishes the foundation and vision for what FluentOS will become in v1.0 and beyond.
+
+## 🎯 Quick Start
+
+| Resource | Link |
+|----------|------|
+| **Vision & Goals** | [📖 docs/vision.md](docs/vision.md) |
+| **Installation** | [⚙️ poc/installation.md](poc/installation.md) |
+| **Requirements** | [📋 poc/requirements.md](poc/requirements.md) |
+| **Roadmap** | [🗺️ docs/roadmap.md](docs/roadmap.md) |
+| **Legal** | [⚖️ docs/legal.md](docs/legal.md) |
+
+## 📦 Repository Structure
+
+```
+fluentos/
+├── docs/               # 📚 Documentation & Vision
+│   ├── vision.md       # What FluentOS is (and isn't)
+│   ├── scope.md        # What's in scope / out of scope
+│   ├── non-goals.md    # Explicit non-goals
+│   ├── editions.md     # Core, Business, Fleet editions
+│   ├── roadmap.md      # v0.1 → v1.0 timeline
+│   └── legal.md        # Licensing & legal framework
+│
+├── poc/                # 🧪 POC Documentation
+│   ├── requirements.md
+│   ├── installation.md
+│   ├── configuration.md
+│   └── known-limitations.md
+│
+├── scripts/            # 🔧 Installation & Configuration
+│   ├── install/        # winget.ps1, tweaks.ps1, services.ps1
+│   ├── uninstall/      # rollback.ps1
+│   └── profiles/       # JSON theme presets
+│
+├── tools/              # 🛠️ Third-Party Tool Guides
+│   ├── seelen/         # Window manager integration
+│   ├── windhawk/       # UX patcher integration
+│   ├── dwmblurglass/   # Blur effects integration
+│   └── explorer/       # Explorer customizations
+│
+├── LICENSE             # MIT License
+└── README.md           # This file
+```
+
+## 🚀 Editions
+
+FluentOS comes in **three editions**, each tailored to different scales:
+
+| Edition | Target | Use Case |
+|---------|--------|----------|
+| **Core** | 👤 Individuals | Personal Windows 11 enhancement |
+| **Business** | 🏢 SMBs | Standardized workstation deployments |
+| **Fleet** | 🏭 Enterprise | Multi-machine governance & management |
+
+→ [Learn more about editions](docs/editions.md)
+
+## ⚠️ POC Status
+
+This **v0.1 POC is not production-ready**. It serves to:
+
+1. **Define** the vision and scope
+2. **Establish** the organizational structure  
+3. **Outline** the approach for v0.2+ iterations
+
+Current limitations and known issues are documented in [poc/known-limitations.md](poc/known-limitations.md).
+
+## 🗺️ Roadmap
+
+| Version | Timeline | Status | Focus |
+|---------|----------|--------|-------|
+| **v0.1** | Dec 2025 | ✅ Current | POC foundation |
+| **v0.2** | Q1 2026 | 📋 Planned | Consistency layer |
+| **v0.3** | Q2 2026 | 📋 Planned | Business ready |
+| **v0.4** | Q3 2026 | 📋 Planned | Business branding |
+| **v0.5** | Q4 2026 | 📋 Planned | Fleet preview |
+| **v1.0** | Q1 2027 | 🎯 Target | Production release |
+
+→ [Full roadmap with details](docs/roadmap.md)
+
+## 🤝 Contributing
+
+FluentOS is open source and welcomes contributions. Areas of interest:
+
+- 📚 Documentation improvements
+- 🐛 Bug reports and fixes
+- ✨ Theme enhancements
+- 🔧 Script improvements
+- 📦 Tool integration guides
+
+## 📄 License
+
+FluentOS is released under the **MIT License**. See [LICENSE](LICENSE) for full details.
+
+**Key Points:**
+- ✅ Use freely on systems you own or manage
+- ✅ Modify and distribute per MIT terms
+- ❌ Cannot circumvent Windows licensing
+- ❌ Cannot claim Microsoft affiliation
+
+## ⚖️ Legal
+
+FluentOS respects Microsoft licensing and operates through supported APIs only. 
+→ [Legal framework & compliance](docs/legal.md)
+
+---
+
+<div align="center">
+
+**[Docs](docs/) • [Issues](https://github.com/codixia/fluentos/issues) • [License](LICENSE)**
+
+*Last updated: December 2025*  
+*Maintained by [Codixia](https://github.com/codixia)*
+
+</div>
