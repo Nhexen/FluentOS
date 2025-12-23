@@ -1,0 +1,39 @@
+{
+  "name": "FluentOS Core – Light",
+  "description": "FluentOS Core edition with light theme optimized for daytime use",
+  "version": "0.1.0",
+  "edition": "Core",
+  "theme": "Light",
+  "settings": {
+    "visual": {
+      "darkMode": false,
+      "accentColor": "#0078D4",
+      "backgroundColor": "#FFFFFF",
+      "textColor": "#000000"
+    },
+    "taskbar": {
+      "position": "Bottom",
+      "transparency": true,
+      "blurIntensity": 0.6
+    },
+    "windowing": {
+      "snapLayouts": true,
+      "cornerPreference": "Rounded",
+      "animationSpeed": "Normal"
+    },
+    "tools": {
+      "seelen": {
+        "enabled": false,
+        "layout": "Tiling"
+      },
+      "windhawk": {
+        "enabled": false,
+        "mods": []
+      },
+      "dwmblurglass": {
+        "enabled": false,
+        "blurIntensity": 0.5
+      }
+    }
+  }
+}

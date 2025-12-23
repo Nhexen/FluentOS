@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>FluentOS – Synthèse produit & roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --accent: #2f7ddc;
+      --accent-soft: rgba(47, 125, 220, 0.12);
+      --accent-strong: #1c5fa8;
+      --bg: #f5f7fb;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --border-soft: rgba(15, 23, 42, 0.08);
+      --text-main: #131722;
+      --text-muted: #4b5563;
+      --pill-bg: rgba(15, 23, 42, 0.03);
+      --shadow-soft: 0 18px 60px rgba(15, 23, 42, 0.12);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: radial-gradient(circle at top left, #e0efff 0, var(--bg) 42%, #edf1f9 100%);
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 980px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(246,249,255,0.96));
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      padding: 32px 32px 40px;
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(22px);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .logo-block {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-block img {
+      width: 56px;
+      height: 56px;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(15,23,42,0.18);
+    }
+
+    .title-group h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 0.02em;
+    }
+
+    .title-group p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .tagline {
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin: 24px 0 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 6px 0 10px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 14px 40px rgba(15,23,42,0.08);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .pill {
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--pill-bg);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    ul {
+      margin: 6px 0 4px 18px;
+      padding: 0;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    ul li {
+      margin-bottom: 3px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .editions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .edition-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
+    }
+
+    .edition-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .edition-tag {
+      font-size: 11px;
+      color: var(--accent-strong);
+      margin-bottom: 5px;
+    }
+
+    .edition-list {
+      list-style: none;
+      margin: 4px 0 0;
+      padding: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .edition-list li::before {
+      content: "• ";
+      color: var(--accent-strong);
+    }
+
+    .roadmap-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+
+    .roadmap-table th,
+    .roadmap-table td {
+      border: 1px solid var(--border-soft);
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .roadmap-table th {
+      background: rgba(15,23,42,0.03);
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+    }
+
+    .footer {
+      margin-top: 20px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* Impression */
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+      .page {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        border: none;
+        padding: 18mm 18mm 20mm;
+        background: #ffffff;
+      }
+      header {
+        border-bottom-color: #d1d5db;
+      }
+      .card,
+      .edition-card {
+        box-shadow: none;
+        background: #ffffff;
+      }
+      .badge,
+      .tagline {
+        border: 1px solid #cbd5e1;
+        background: #f8fafc;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        border-radius: 18px;
+        padding: 20px 16px 24px;
+      }
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .editions-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="logo-block">
+        <!-- Remplace src par le chemin de ton icône FluentOS (PNG/SVG) -->
+        <img src="FluentOS.png" alt="Logo FluentOS">
+        <div class="title-group">
+          <h1>FluentOS – Synthèse & roadmap</h1>
+          <p>Couche d’expérience pour Windows 11 • Version 0.1 – Proof of Concept</p>
+        </div>
+      </div>
+      <div class="tagline">
+        UX Layer · Windows 11 · Codixia
+      </div>
+    </header>
+
+    <section>
+      <div class="section-label">Positionnement</div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Pourquoi FluentOS existe</div>
+          </div>
+          <p><strong>FluentOS n’est pas un nouveau système d’exploitation.</strong> C’est une couche d’expérience pour Windows&nbsp;11, pensée pour rendre l’OS plus cohérent, plus lisible et plus agréable à utiliser, sans modifier le kernel ni détourner les mécanismes de sécurité.</p>
+          <p>Objectifs principaux&nbsp;:</p>
+          <ul>
+            <li>Réduire la fragmentation UX entre Win32, UWP, web et outils modernes.</li>
+            <li>Apporter une identité visuelle fluide, inspirée de Fluent/Fluent&nbsp;2, mais maîtrisée.</li>
+            <li>Offrir des profils d’usage clairs (utilisateur, PME, flotte) avec des règles explicites.</li>
+            <li>Rester entièrement réversible, scripté et documenté.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Ce que FluentOS est / n’est pas</div>
+          </div>
+          <p><strong>FluentOS est&nbsp;:</strong></p>
+          <ul>
+            <li>Une surcouche UX reproductible pour Windows&nbsp;11.</li>
+            <li>Un ensemble de presets, scripts et bonnes pratiques.</li>
+            <li>Une base commune pour Core, Business et Fleet.</li>
+          </ul>
+          <p><strong>FluentOS n’est pas&nbsp;:</strong></p>
+          <ul>
+            <li>Une ISO modifiée ou un fork de Windows.</li>
+            <li>Un “theme pack” agressif ou non réversible.</li>
+            <li>Un contournement des licences ou de la sécurité Microsoft.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Gamme produit</div>
+      <h2>Les trois éditions FluentOS</h2>
+      <p>Chaque édition cible un usage et un niveau de contrôle distinct. Le cœur technique est commun, mais le périmètre fonctionnel et le degré d’administration varient.</p>
+
+      <div class="editions-grid">
+        <div class="edition-card">
+          <div class="edition-name">FluentOS Core</div>
+          <div class="edition-tag">Visuel &amp; utilisateur uniquement</div>
+          <ul class="edition-list">
+            <li>Refonte UX cohérente pour Windows&nbsp;11.</li>
+            <li>Profils clair/sombre, comportements unifiés.</li>
+            <li>Scripts et réglages au niveau utilisateur.</li>
+            <li>Aucune GPO, aucun verrouillage système.</li>
+            <li>Destiné aux power users, devs, particuliers exigeants.</li>
+          </ul>
+        </div>
+
+        <div class="edition-card">
+          <div class="edition-name">FluentOS Business</div>
+          <div class="edition-tag">Image &amp; contrôle léger (PME)</div>
+          <ul class="edition-list">
+            <li>Tout FluentOS Core.</li>
+            <li>Branding entreprise (nom, logo, couleurs, fonds d’écran).</li>
+            <li>GPO légères&nbsp;: Store, installation de logiciels, terminal…</li>
+            <li>Préconfiguration de postes “prêts à l’emploi”.</li>
+            <li>Ciblé TPE/PME, cabinets, agences, petites équipes.</li>
+          </ul>
+        </div>
+
+        <div class="edition-card">
+          <div class="edition-name">FluentOS Fleet</div>
+          <div class="edition-tag">Gouvernance &amp; profils métiers</div>
+          <ul class="edition-list">
+            <li>Tout FluentOS Core + Business.</li>
+            <li>GPO avancées et intégration AD/Intune.</li>
+            <li>Profils métiers&nbsp;: accueil, compta, direction, dev, etc.</li>
+            <li>Styles visuels différenciés mais cohérents.</li>
+            <li>Déploiement et rollback à grande échelle.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Roadmap v0.1 → v1.0</div>
+      <h2>Roadmap FluentOS</h2>
+      <p>La roadmap se concentre d’abord sur la stabilité et la cohérence, puis sur l’industrialisation côté Business et Fleet.</p>
+
+      <table class="roadmap-table">
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Objectif principal</th>
+            <th>Contenu clé</th>
+            <th>Portée</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge">v0.1 – POC</span></td>
+            <td>Valider la faisabilité technique et visuelle.</td>
+            <td>
+              - Orchestration des outils (Seelen, Windhawk, DWMBlurGlass, etc.)<br>
+              - Profils FluentOS Core (clair/sombre).<br>
+              - Scripts d’installation et de rollback.<br>
+              - Première identité visuelle (icône FluentOS).
+            </td>
+            <td>Core uniquement.</td>
+          </tr>
+          <tr>
+            <td><span class="badge">v0.2 – Consistency Layer</span></td>
+            <td>Stabiliser l’expérience utilisateur.</td>
+            <td>
+              - Règles UX documentées (dialogs, notifications, overlays).<br>
+              - Presets Core affinés (desktop, laptop, dev).<br>
+              - Clarification des fenêtres “intangibles” (pas de styling agressif).<br>
+              - Documentation d’installation détaillée.
+            </td>
+            <td>Core.</td>
+          </tr>
+          <tr>
+            <td><span class="badge">v0.3 – Business Ready</span></td>
+            <td>Préparer l’usage en petites structures.</td>
+            <td>
+              - Templates de branding (logo, couleurs, fonds d’écran).<br>
+              - Pack de GPO légères prêtes à l’emploi.<br>
+              - Script d’installation “poste de travail Business”.<br>
+              - Documentation à destination des responsables IT/TPE.
+            </td>
+            <td>Core + Business.</td>
+          </tr>
+          <tr>
+            <td><span class="badge">v0.4 – Business Branding</span></td>
+            <td>Affiner l’intégration visuelle entreprise.</td>
+            <td>
+              - Éléments de DA présents dans l’OS (écran d’accueil, sessions, menus).<br>
+              - Variantes par service (commercial, support, direction) au sein d’une PME.<br>
+              - Guides d’onboarding utilisateur simples.
+            </td>
+            <td>Business.</td>
+          </tr>
+          <tr>
+            <td><span class="badge">v0.5 – Fleet Preview</span></td>
+            <td>Introduire la logique flotte.</td>
+            <td>
+              - Profils métiers Fleet (compta, accueil, management, direction, dev…).<br>
+              - Intégration de base AD/Intune / scripts de déploiement massifs.<br>
+              - Jeux de GPO avancées documentées.
+            </td>
+            <td>Business + Fleet (préversion).</td>
+          </tr>
+          <tr>
+            <td><span class="badge">v1.0 – FluentOS Core Platform</span></td>
+            <td>Stabiliser la plateforme et la gouvernance.</td>
+            <td>
+              - API interne de configuration de profils.<br>
+              - Versionnage des presets et des politiques.<br>
+              - Documentation complète (technique, UX, déploiement).<br>
+              - Processus de contribution et de support communautaire.
+            </td>
+            <td>Core + Business + Fleet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="section-label">Notes</div>
+      <h2>Principes de conception & conformité</h2>
+      <div class="card">
+        <p><strong>Principes de conception FluentOS&nbsp;:</strong></p>
+        <ul>
+          <li>La lisibilité et la stabilité passent avant l’esthétique.</li>
+          <li>Aucune fenêtre critique (UAC, Regedit, SmartScreen…) n’est stylisée de manière agressive.</li>
+          <li>Tout changement doit être réversible par script.</li>
+          <li>Les choix UX sont documentés, pas implicites.</li>
+        </ul>
+        <p><strong>Conformité et périmètre technique&nbsp;:</strong></p>
+        <ul>
+          <li>FluentOS ne redistribue aucun binaire Microsoft.</li>
+          <li>Pas de modification du kernel, du shell natif ou des mécanismes de licence.</li>
+          <li>Appui exclusivement sur des APIs supportées, des GPO et des outils documentés.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>FluentOS</strong> – Projet Codixia · Document de synthèse v0.1<br>
+        Document imprimable, conçu pour un format A4 (recto).
+      </div>
+      <div>
+        Contact projet / remarques internes&nbsp;: préciser ultérieurement.<br>
+        Ce document ne constitue pas un engagement commercial.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
