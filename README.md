@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="docs/assets/FluentOS.png" alt="FluentOS Logo" width="300" height="auto">
+<img src="docs/assets/FluentOS.png" alt="FluentOS Logo" width="200" height="auto">
 
 # FluentOS
 
 **A modern UX layer for Windows 11**  
 *Coherence • Readability • Productivity*
 
-[![Status](https://img.shields.io/badge/Status-POC-orange?style=flat-square)](docs/roadmap.md)
-[![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat-square)](docs/roadmap.md)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Windows](https://img.shields.io/badge/Windows-11%2B-0078D4?style=flat-square&logo=windows11)](https://www.microsoft.com/en-us/windows/windows-11)
-[![GitHub Issues](https://img.shields.io/github/issues/codixia/fluentos?style=flat-square)](https://github.com/codixia/fluentos/issues)
+[![Status](https://img.shields.io/badge/Status-POC-orange?style=for-the-badge)](docs/roadmap.md)
+[![Version](https://img.shields.io/badge/Version-0.1.0-0078D4?style=for-the-badge)](docs/roadmap.md)
+[![License](https://img.shields.io/badge/License-MIT-50C878?style=for-the-badge)](LICENSE)
+[![Windows](https://img.shields.io/badge/Windows-11+-0078D4?style=for-the-badge&logo=windows11&logoColor=white)](https://www.microsoft.com/en-us/windows/windows-11)
+[![GitHub Issues](https://img.shields.io/github/issues/codixia/fluentos?style=for-the-badge&logo=github)](https://github.com/codixia/fluentos/issues)
 
 ---
 
